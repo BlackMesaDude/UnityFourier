@@ -8,6 +8,7 @@ Index
       * [What does it provide?](#what-does-it-provide)
    * [How does it work?](#how-does-it-work)
       * [Code Example](#code-example)
+      * [Additional Notes](#additional-noted)
    * [Support](#support)
 <!--te-->
 
@@ -46,6 +47,10 @@ public class ScalingCube : MonoBehaviour
   }
 }
 ```
+
+### Additional Notes
+
+UnityFourier **as been developed using Unity 2020.1.3f1** but it can be used with older versions too! (*min. 5.6*)
 
 ## Support
 
