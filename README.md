@@ -5,27 +5,48 @@ Index
 
 <!--ts-->
    * [Introduction](#UnityFourier)
-      * [Usage Examples](#usage-examples)
       * [What does it provide?](#what-does-it-provide)
    * [How does it work?](#how-does-it-work)
-      * [Unity](#inside-unity)
-      * [Graph](#uml-graph)
+      * [Code Example](#code-example)
    * [Support](#support)
 <!--te-->
 
-**UnityFourier** is a <a href="https://unity.com">Unity Engine</a> C# library to allow easy audio data gathering during runtime.
-
-### Usage Examples
-
-**UnityFourier**, as said before, allows to gather data of an audio source during the runtime process. A example would be a graphical visualization of the incoming sample values as shown in this video:
+**UnityFourier** is a <a href="https://unity.com">Unity Engine</a> C# library to allow easy audio data gathering during runtime using a single class.
 
 ### What does it provide?
 
-This library allows to get samples, amplitude, frequency and channel bands also including buffered ones. 
+**UnityFourier** provides a single class that contains data coming from the <see href="https://en.wikipedia.org/wiki/Fast_Fourier_transform">FFT theory</see> allowing to re-use it and manipulate it to achieve the results you want.
 
-## How does it work?
+`More information can be found inside AudioPeer.cs including documentation`
 
-### Unity
-### Graph
+### How does it work?
 
-# Support
+Before you start coding make sure that in unity you have the AudioPeer class attached to a gameobject.
+
+#### Code Example
+
+This simple example shows how to make a cube scale on the rythm of a frequency band:
+
+```c#
+using UnityEngine;
+using UnityFourier;
+
+public class ScalingCube : MonoBehaviour
+{
+  public AudioSource source;
+  
+  public int targetBand;        // if augmentBands is false the maximum bands would be 8, set it to true if you want more bands to use
+  public float startingScale, scaleMultiplier;
+  
+  void Start() => AudioPeer.SharedInstance.TargetSource = source;
+  
+  void Update()
+  {
+    transform.localScale = new Vector3(transform.localScale.x, (AudioPeer.SharedInstance.FrequencyBands[targetBand] * scaleMultiplier) + startingScale, transform.localScale.z);
+  }
+}
+```
+
+## Support
+
+If you have any problem with UnityFourier contact me at francescomesianodev@gmail.com otherwise fill an issue.
