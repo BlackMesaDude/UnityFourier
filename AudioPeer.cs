@@ -119,7 +119,7 @@ namespace UnityFourier
         private float _currentFrequencyAverageResult = 0.0f;                                                                        // current average frequency
         private float _currentAmplitude = 0.0f, _currentBufferedAmplitude = 0.0f;                                                   // current amplitude values
 
-        public int _currentSamplePowValue = 0;                                                                                      // current sample power value, used only when augmentedBands is true
+        private int _currentSamplePowValue = 0;                                                                                     // current sample power value, used only when augmentedBands is true
 
         /// <summary>
         /// Gets a floating point array wich stores the left channel samples value
