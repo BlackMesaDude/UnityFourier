@@ -17,8 +17,6 @@ Index
 
 **UnityFourier** provides a single class that contains data coming from the <see href="https://en.wikipedia.org/wiki/Fast_Fourier_transform">FFT theory</see> allowing to re-use it and manipulate it to achieve the results you want.
 
-`More information can be found inside AudioPeer.cs including documentation`
-
 ### How does it work?
 
 Before you start coding make sure that in unity you have the AudioPeer class attached to a gameobject.
