@@ -9,6 +9,7 @@ Index
       * [Code Example](#code-example)
       * [Additional Notes](#additional-noted)
    * [Support](#support)
+   * [Additional Notes](#additional-notes)
 <!--te-->
 
 **UnityFourier** is a <a href="https://unity.com">Unity Engine</a> C# library to allow easy audio data gathering during runtime using a single class.
@@ -45,10 +46,10 @@ public class ScalingCube : MonoBehaviour
 }
 ```
 
-### Additional Notes
-
-UnityFourier **as been developed using Unity 2020.1.3f1** but it can be used with older versions too! (*min. 5.6*)
-
 ## Support
 
 If you have any problem with UnityFourier contact me at francescomesianodev@gmail.com otherwise fill an issue.
+
+### Additional Notes
+
+UnityFourier **as been developed using Unity 2020.1.3f1** but it can be used with older versions too! (*min. 5.6*)
