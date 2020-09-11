@@ -12,10 +12,6 @@
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU General Public License for more details.
 
-    You should have received a copy of the GNU General Public License along
-    with this program; if not, write to the Free Software Foundation, Inc.,
-    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
-
 */
 
 using UnityEngine;
@@ -42,11 +38,23 @@ namespace UnityFourier
             Right
         }
 
+        /// <summary>
+        /// Defines how many samples will be get during runtime
+        /// </summary>
+        public enum SamplesAmount : int
+        {
+            _64 = 64,
+            _128 = 128,
+            _256 = 256,
+            _512 = 512,
+            _1024 = 1024,
+            _2048 = 2048,
+            _4096 = 4096,
+            _8192 = 8192
+        }
+
         [Header("AudioPeer - Settings")]
         [Space(2f)]
-
-        [Header("MonoBehaviour Related")]
-        [Space(1f)]
 
         [Tooltip("How many frames before the next update?")]
         /// <summary>
@@ -76,7 +84,7 @@ namespace UnityFourier
         /// <summary>
         /// Total samples that should be taken, this won't be changeable during runtime
         /// </summary>
-        public int samplesAmount;
+        public SamplesAmount samplesAmount;
 
         [Tooltip("The channel where the sample data will be taken")]
         /// <summary>
@@ -208,8 +216,8 @@ namespace UnityFourier
             if(SharedInstance == null)
                 SharedInstance = this;
 
-            _lSamples = new float[samplesAmount];
-            _rSamples = new float[samplesAmount];
+            _lSamples = new float[(int) samplesAmount];
+            _rSamples = new float[(int) samplesAmount];
 
             if(augmentBands)
             {
@@ -285,15 +293,13 @@ namespace UnityFourier
                 {
                     _currentFrequencyAverageResult = 0.0f;
 
-                    _currentSample = (int) Mathf.Pow(2, i) * 2;
-
                     if(i == 16 || i == 32 || i == 40 || i == 48 || i == 46)
                     {
                         _currentSamplePowValue++;
                         _currentSample += (int) Mathf.Pow(2, _currentSamplePowValue);
 
                         if(_currentSamplePowValue == 3)
-                            _currentSample += 2;
+                            _currentSample -= 2;
                     }
 
                     for(int j = 0; j < _currentSample; j++)
