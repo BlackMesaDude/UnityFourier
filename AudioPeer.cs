@@ -74,9 +74,9 @@ namespace UnityFourier
         [Header("Samples Related")]
         [Space(1f)]
 
-        [Tooltip("Defines how the spectrum data should be taken")]
+        [Tooltip("Depending on what you choose it will define how the reduction of the signals in the frequency bands will be affected, Blackman or BlackmanHarris are acceptable but resource expensive.")]
         /// <summary>
-        /// Defines how the spectrum data should be taken
+        /// Defines how the spectrum data should be taken, this includes reduction of signals leakage in the frequency bands <see href="https://docs.unity3d.com/ScriptReference/FFTWindow.html" />
         /// </summary>
         public FFTWindow spectrumWindow = FFTWindow.Blackman;
 
