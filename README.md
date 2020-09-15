@@ -12,17 +12,17 @@ Index
    * [Additional Notes](#additional-notes)
 <!--te-->
 
-**UnityFourier** is a <a href="https://unity.com">Unity Engine</a> C# library to allow easy audio data gathering during runtime using a single class.
+**UnityFourier** is a <a href="https://unity.com">Unity Engine</a> C# library to allow easy audio data gathering during runtime. This allows you to manipulate the incoming data and reuse it depending on your needs, an example would be a graphical visualizer.
 
 ### What does it provide?
 
-**UnityFourier** provides a single class that contains data coming from the <see href="https://en.wikipedia.org/wiki/Fast_Fourier_transform">FFT theory</see> allowing to re-use it and manipulate it to achieve the results you want.
+**UnityFourier** provides a main class called <code>AudioPeer</code> that contains <i>6</i> virtual methods that allow the gathering of various data such as audio profiles, samples, frequencies, buffers and amplitude values.
 
 ### How does it work?
 
 Before you start coding make sure that in unity you have the AudioPeer class attached to a gameobject.
 
-#### Code Example
+##### Code Example
 
 This simple example shows how to make a cube scale on the rythm of a frequency band:
 
@@ -52,4 +52,4 @@ If you have any problem with UnityFourier contact me at francescomesianodev@gmai
 
 ### Additional Notes
 
-UnityFourier **as been developed using Unity 2020.1.3f1** but it can be used with older versions too! (*min. 5.6*)
+UnityFourier **as been developed using Unity 2020.1.3f1** but it can be used with older versions too! (*min. 5.6*). If you're planning to use the source code remember to change the Unity Engine runtime dll inside [runtime/dll](https://github.com/BlackMesaDude/UnityFourier/tree/master/runtime/dll)
