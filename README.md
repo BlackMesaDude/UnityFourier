@@ -34,7 +34,8 @@ public class ScalingCube : MonoBehaviour
 {
   public AudioSource source;
   
-  public int targetBand;        // if augmentBands is false the maximum bands would be 8, set it to true if you want more bands to use
+  [Range(0, 7)]                 // band count always starts from 0
+  public int targetBand;        // if augmentBands is false (by default it should be) the maximum bands would be 8, set it to true if you want more bands (max. 64)
   public float startingScale, scaleMultiplier;
   
   void Start() => AudioPeer.SharedInstance.TargetSource = source;
