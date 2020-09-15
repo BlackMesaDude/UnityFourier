@@ -245,8 +245,7 @@ namespace UnityFourier
 
         private void Start() 
         {
-            if(_targetSource == null)
-                _targetSource = GetComponent<AudioSource>();
+            if(_targetSource == null) _targetSource = gameObject.GetComponent<AudioSource>() ?? GetComponent<AudioSource>();
             FetchProfile(audioProfileIndex, augmentBands);
         }
 
